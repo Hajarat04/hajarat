@@ -1,4 +1,4 @@
-
+import os
 import ssl
 import pandas as pd
 from email.mime.text import MIMEText
@@ -11,8 +11,8 @@ import requests
 class SendEmail:
 
     def __init__(self):
-        self.password = "yagnrbonocvwyzbu"
-        self.sender = "zoebiggerman@gmail.com"
+        self.password = os.getenv("password")
+        self.sender = os.getenv("sender")
 
     def anniversary_items(self, lst, yrs=None):
         string = ''
